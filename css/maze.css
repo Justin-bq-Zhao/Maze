@@ -1,0 +1,53 @@
+.mazeArea {
+    width: 1300px;
+    height: 700px;
+    margin: 6px 77px;
+    /* transition: all 1s ease 0s; */
+    transform: scale(1,1);
+    display: none;
+}
+
+/* .mazeArea .innerMaze ul {
+    background-color: purple;
+} */
+
+.mazeArea .block {
+    background-color: black;
+}
+
+.mazeArea .empty {
+    background-color: white;
+}
+
+.mazeArea .passed {
+    background-color: cornflowerblue;
+}
+
+.mazeArea .current {
+    background-color: rgb(3, 255, 171);
+}
+
+.mazeArea .correct {
+    background-color: rgb(231, 233, 104);
+}
+
+.mazeArea .AStarCover {
+    background-color: rgb(252, 162, 120);
+}
+
+.mazeArea ul .curPos::after {
+    position: absolute;
+    top : 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color : black;
+    font-family: 'icomoon';
+    content: '';
+    background-color: rgb(236, 107, 107);
+}
+
+.mazeArea ul .curPos {
+    position: relative;
+}
+

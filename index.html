@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAZE GAME</title>
+    <!--favicon-->
+    <link rel="short icon" href="images/favicon.ico" type="image/x-icon"/>
+    <!--initial css file-->
+    <link rel="stylesheet" href="css/initialize.css">
+    <!--other css files-->
+    <link rel="stylesheet" href= "css/createMazePage.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/maze.css">
+    <link rel="stylesheet" href="css/pathFindingWindow.css">
+    <link rel="stylesheet" href="css/manual.css">
+    <script src="js/$.js"></script>
+    <script src="js/constantValue.js"></script>
+    <script src="js/ParametersPassing.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="createMaze">
+        <div class="title">Generate A Maze</div>
+        <div class="getRow">
+            <div class="text">ROWS : </div>
+            <div class="number">
+                <button class="minus icon"></button>
+                <input type="text" name="rowNumber" id="rowNumber" title="Number of rows in the maze" value="100">
+                <button class="add icon"></button>
+                <div class="judge icon"></div>
+            </div>
+        </div>
+        <div class="getCol">
+            <div class="text">COLUMNS : </div>
+            <div class="number">
+                <button class="minus icon"></button>
+                <input type="text" name="colNumber" id="colNumber" title="Number of columns in the maze" value="100">
+                <button class="add icon"></button>
+                <div class="judge icon"></div>
+            </div>
+        </div>
+        <div class="submitArea">
+            <div class="displayBox">
+                <input type="checkbox" name="display" id="display">
+                <i>&nbsp;&nbsp;Show creation process</i>
+            </div>
+            <button class="submit">Generate</button>
+            <div class="submitRes icon"></div>
+        </div>
+        <div class="exit icon"></div>
+    </div>
+    <div class="AStarPathFind">
+        <div class="title">Path Finding</div>
+        <div class="middleBox">
+            <input type="checkbox" name="showProcess" id="showProcess">
+            <i>&nbsp;&nbsp;Show finding process</i>
+        </div>
+        <button class="submit">Start</button>
+        <div class="exit icon"></div>
+    </div>
+    <div id="covering"></div>
+    <div class="nav">
+        <div class="menusTip">
+            <div class="top"></div>
+            <div class="middle" title="open"></div>
+            <div class="bottom"></div>
+        </div>
+        <ul>
+            <li id="generate" title="Generate A New Maze"></li>
+            <li id="delete" title="Delete Current Maze"></li>
+            <li id="enlarge" title="Zoom In Maze"></li>
+            <li id="zoomOut" title="Zoom Out Maze"></li>
+            <li id="refresh" title="Refresh Current Maze"></li>
+            <li id="move" title="Move The Maze"></li>
+            <li id="pathfinding" title="show the shortest path"></li>
+            <li id="skip" title="Skip to other location"></li>
+            <li id="manual" title="Manual"></li>           
+        </ul>
+    </div>
+    <div class="manualBox">
+        <div class="manual">
+            <p>&nbsp;&nbsp;Generate A New Maze, you can set the rows and columns number of the maze, when rows or columns number is even, it will be added by one</p>
+            <hr>
+            <p>&nbsp;&nbsp;Delete Current Maze</p>
+            <hr>
+            <p>&nbsp;&nbsp;Zoom In Maze, you need to click this icon in toolbar first, then click the maze where you want to zoom in </p>
+            <hr>
+            <p>&nbsp;&nbsp;Zoom Out Maze, you need to click this icon in toolbar first, then click the maze where you want to zoom out</p>
+            <hr>
+            <p>&nbsp;&nbsp;Refresh Current Maze, the maze will back to the initial status</p>
+            <hr>
+            <p>&nbsp;&nbsp;Move The Maze, you need to click this icon in toolbar first, then you can drag the maze</p>
+            <hr>
+            <p>&nbsp;&nbsp;show the shortest path from current location to the end</p>
+            <hr>
+            <p>&nbsp;&nbsp;Skip to any non-block cell in the maze</p>
+            <hr>
+            <p>&nbsp;&nbsp;what you see now</p>
+            
+        </div>
+        <div class="exit icon"></div>
+    </div>
+
+    <div class="mazeArea">
+        <div class="innerMaze">
+            
+        </div>
+    </div>
+    <script src="js/generateMaze.js""></script>
+    <script src="js/minHeap.js""></script>
+    <script src="js/AStar.js""></script>
+    <script src="js/moveFunction.js""></script>
+    <script src="js/initializeEvent.js""></script>
+    <script src="js/GenerateMazeEvent.js""></script>
+    <script src="js/navigationEvent.js""></script>
+    <script src="js/mazeEvent.js""></script>
+    <script src="js/PathFindingEvent.js""></script>
+    <script src="js/moveEvent.js""></script>
+    <script src="js/manualEvent.js""></script>
+
+</body>
+</html>

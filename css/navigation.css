@@ -1,0 +1,80 @@
+.nav {
+    position: fixed;
+    z-index : 100;
+    top : 87px;
+    left : 100%;
+    width: 60px;
+    height: 540px;
+    background-color: rgb(152, 255, 50);
+}
+
+.nav .menusTip {
+    position: absolute;
+    height: 50px;
+    width: 20px;
+    left : -20px;
+    top : 45%;
+    z-index : 100;
+}
+
+.nav .menusTip .top {
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid rgb(152, 255, 50);
+    border-top: 5px solid transparent;
+    border-right : 10px solid rgb(152, 255, 50);
+    border-left : 10px solid transparent;
+}
+
+.nav .menusTip .middle {
+    width: 20px;
+    height: 30px;
+    background-color: rgb(152, 255, 50);
+    overflow: hidden;
+    text-align: center;
+    font: 20px/1.5 'icomoon';
+    color : black;
+    cursor: pointer;
+}
+
+.nav .menusTip .bottom {
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid rgb(152, 255, 50);
+    border-right : 10px solid rgb(152, 255, 50);
+    border-left : 10px solid transparent;
+
+}
+
+.nav ul .selected:after {
+    position: absolute;
+    top : 0;
+    left: 0;
+    content: '';
+    width: 40px;
+    height: 40px;
+    margin : 10px;
+    border-radius: 20px;
+    background-color: rgb(114, 114, 241);
+    z-index: -5;
+}
+
+.nav ul{
+    width: 100%;
+    height: 500px;
+    font: 20px 'icomoon';
+    color : black;
+    
+}
+
+.nav ul li {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+}
+
