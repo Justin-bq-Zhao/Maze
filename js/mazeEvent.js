@@ -56,8 +56,6 @@ $(
                         SkipPos($(e.target));
                     }
                    
-                }else if (curSelected.index() == $('.nav ul #move').index()){
-                    
                 }
             }
             

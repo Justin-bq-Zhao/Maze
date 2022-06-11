@@ -21,7 +21,6 @@ function nextPos(str){
         let prevRow = curPos.parent().prev();
         if (prevRow){
             let MTL = prevRow.children().eq(curPos.index()); //Moving target location
-            console.log(MTL);
             if (MTL[0].className != 'block'){
                 changeCurPos(MTL);
             }

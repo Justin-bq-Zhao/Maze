@@ -38,17 +38,21 @@ $(function(){
         if ($(e.target).index() == $('.nav ul #generate').index()){
             $('.AStarPathFind').hide();
             $('.manualBox').hide();
+            canMove = false;
         }else if ($(e.target).index() == $('.nav ul #pathfinding').index()){
             $('#createMaze').hide();
             $('.manualBox').hide();
+            canMove = false;
         }else if ($(e.target).index() == $('.nav ul #manual').index()){
             $('.AStarPathFind').hide();
             $('#createMaze').hide();
+            canMove = false;
         }else{
             $('#covering').hide();
             $('.AStarPathFind').hide();
             $('#createMaze').hide();
             $('.manualBox').hide();
+            canMove = MazeExist;
         }
         if ($(e.target).index() == $('.nav ul #delete').index() || $(e.target).index() == $('.nav ul #refresh').index()){
             curSelected = null;

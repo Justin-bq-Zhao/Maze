@@ -4,3 +4,4 @@ let curSelected = null;  //which in menus was selected
 let originMaze = [];           //origin Maze array
 let CurScreenLen = $(window).width();
 let cellLen = 0;
+let canMove = false;

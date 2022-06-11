@@ -262,6 +262,7 @@ $(
                     // };
 
                     MazeExist = true;
+                    canMove = true;
                     curPos = $('.mazeArea').children().children().eq(1).children().eq(1);
                     curPos.addClass('passed');
                     curPos.addClass('curPos');

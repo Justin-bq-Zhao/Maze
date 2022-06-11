@@ -248,6 +248,7 @@ function PrimGenerateMazeWithAnimation(Ylen, Xlen, $Object){
                 clearInterval(generateInterval);
                 originMaze = maze;
                 MazeExist = true;
+                canMove  = true;
                 curPos = $('.mazeArea').children().children().eq(1).children().eq(1);
                 curPos.addClass('passed');
                 curPos.addClass('curPos');
