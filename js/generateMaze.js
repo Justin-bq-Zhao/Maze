@@ -111,68 +111,6 @@ function getNextIndex(accessLen, curIndex){
     }return ++curIndex;
 }
 
-
-
-// function PrimGenerateMazeWithAnimation(Ylen, Xlen, $Object){
-//     let rowList = $Object.children();
-//     if (Ylen % 2 == 0) Ylen ++;
-//     if (Xlen % 2 == 0) Xlen ++;
-
-//     //empty length and bound
-//     let  y= (Ylen - 1) / 2;
-//     let  x= (Xlen - 1) / 2;
-//     let YBound = Ylen - 1;
-//     let XBound = Xlen - 1;
-
-
-//     //create a maze
-//     let maze = generateBasicMaze(Ylen,Xlen);
-
-//     //choose a location start randomly
-//     let cury = Math.floor(Math.random() * y);
-//     let curx = (Math.floor(Math.random() * x));
-//     let access = [];
-//     let randomStart = convertCoordinate(cury, curx);
-//     access.push(randomStart);
-//     let parent = new Array(y * x);
-//     for (let i = 0; i < parent.length; i++) parent[i] = i;
-//     maze[randomStart[0]][randomStart[1]] = EMPTY;                                           //Mazeupdate
-//     rowList.eq(randomStart[0]).children().eq(randomStart[1]).removeClass('block');
-//     rowList.eq(randomStart[0]).children().eq(randomStart[1]).addClass('current');
-
-
-//     let generateInterval = setInterval(function(){
-//         if (access.length){
-//             let cur = getElementRamdomly(access);
-//             rowList.eq(cur[0]).children().eq(cur[1]).removeClass('current');
-//             rowList.eq(cur[0]).children().eq(cur[1]).addClass('empty');
-//             for (let index = 0; index < Createdirs.length; index++){
-//                 let tempY = cur[0] + Createdirs[index][0];
-//                 let tempX = cur[1] + Createdirs[index][1];
-//                 if (tempX < 1 || tempX >= XBound || tempY < 1 || tempY >= YBound){
-//                     continue;
-//                 } 
-//                 if (maze[tempY][tempX] != EMPTY){
-//                     maze[tempY][tempX] = EMPTY;                             //Mazeupdate
-//                     rowList.eq(tempY).children().eq(tempX).removeClass('block');
-//                     rowList.eq(tempY).children().eq(tempX).addClass('current');
-//                     access.push([tempY, tempX]);                    //Arrayupdate
-//                 }else if (find(parent,linearIndex(cur[0], cur[1], x)) != find(parent,linearIndex(tempY,tempX,x))){
-//                     //demolish the wall
-//                     let cy = cur[0] + Createdirs[index][0] / 2;
-//                     let cx = cur[1] + Createdirs[index][1] /2;
-//                     maze[cy][cx] = EMPTY; //Mazeupdate
-//                     rowList.eq(cy).children().eq(cx).removeClass('block');
-//                     rowList.eq(cy).children().eq(cx).addClass('empty');
-//                     union(parent, linearIndex(cur[0], cur[1], x), linearIndex(tempY,tempX,x));
-//                 }
-//             };
-//         }else {
-//             clearInterval(generateInterval);
-//             originMaze = maze;
-//         }
-//     }, 0.001);
-// }
 function PrimGenerateMazeWithAnimation(Ylen, Xlen, $Object){
     let rowList = $Object.children();
     if (Ylen % 2 == 0) Ylen ++;
@@ -257,8 +195,10 @@ function PrimGenerateMazeWithAnimation(Ylen, Xlen, $Object){
                     'font-size' : cellLen + 'px'
                 });
 
-                curSelected && curSelected.removeClass('selected')
-                curSelected = null;
+                if (curSelected && curSelected.index() == $('.nav ul #generate').index()){
+                    curSelected.removeClass('selected')
+                    curSelected = null;
+                }
             };
         };
     }, 0.001);

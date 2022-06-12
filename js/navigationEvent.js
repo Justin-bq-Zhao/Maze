@@ -33,7 +33,6 @@ $(function(){
 
 
     $('.nav ul').on('click', function(e){
-        
         curSelected && curSelected.removeClass('selected');
         if ($(e.target).index() == $('.nav ul #generate').index()){
             $('.AStarPathFind').hide();
@@ -48,18 +47,16 @@ $(function(){
             $('#createMaze').hide();
             canMove = false;
         }else{
-            console.log($('#createMaze').width());
             $('#covering').hide();
             $('.AStarPathFind').hide();
             $('#createMaze').hide();
             $('.manualBox').hide();
-            canMove = MazeExist;
         }
         if ($(e.target).index() == $('.nav ul #delete').index() || $(e.target).index() == $('.nav ul #refresh').index()){
             curSelected = null;
         }else {
             curSelected = $(e.target);
-        $(curSelected).addClass('selected');
+            $(curSelected).addClass('selected');
         }
 
         
@@ -107,6 +104,9 @@ $(function(){
             CurScreenLen = $(window).width();
             $('.nav .middle').click();
             $('.nav .middle').click();
+
+
+            curPos = $('.mazeArea .innerMaze').children().eq(1).children().eq(1);
         }
     });
 

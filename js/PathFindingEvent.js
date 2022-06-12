@@ -27,18 +27,24 @@ $('.AStarPathFind').on('selectstart', function(e){
     e.preventDefault();
 });
 
-$('.AStarPathFind .exit').on('click', function(){
+function exitAstar(){
     $('.AStarPathFind').hide();
     $('#covering').hide();
-    curSelected && curSelected.removeClass('selected')
-    curSelected = null;
+    if (curSelected && curSelected.index() == $('.nav ul #pathfinding').index()){
+        curSelected.removeClass('selected')
+        curSelected = null;    
+    }
+}
+
+$('.AStarPathFind .exit').on('click', function(){
+    exitAstar();
+    canMove = true;
 });
 
 
-
 $('.AStarPathFind .submit').on('click', function(){
-    if (MazeExist && curPos && originMaze){
-        $('.AStarPathFind .exit').triggerHandler('click');
+    if (MazeExist && curPos && originMaze && !window.AstarAnimation){
+        exitAstar();
         let checkbox = $(this).prev().find('#showProcess').prop('checked');
         $(this).prev().find('#showProcess').prop('checked', false);
         
@@ -55,14 +61,16 @@ $('.AStarPathFind .submit').on('click', function(){
                     index++;
                 }else{
                     clearInterval(window.AstarAnimation);
-                    curSelected && curSelected.removeClass('selected')
-                    curSelected = null;
+                    window.AstarAnimation = null;
+                    canMove  = true;
+                    if (curSelected && curSelected.index() == $('.nav ul #pathfinding').index()){
+                        curSelected.removeClass('selected')
+                        curSelected = null;
+                        
+                    }
                 }
             },0.001);
         }
-    }else{
-        alert('Please generate a maze first');
-    }
-    
+    } 
 });
 

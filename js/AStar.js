@@ -127,7 +127,8 @@ function AStarWithAnimation(originMap,start,end) {
     let passedPath = [];
     //add start to deque
     curCoordinate.insert([StartY, StartX, -1, endPrice(StartY, StartX, EndY, EndX)]);
-    $('.mazeArea .innerMaze').children().eq(StartY).children().eq(StartX).addClass('current');
+    // $('.mazeArea .innerMaze').children().eq(StartY).children().eq(StartX).addClass('current');
+    document.querySelector('.mazeArea .innerMaze').children[StartY].children[StartX].className = 'current';
     //start loop
 
     window.AstarAnimation = setInterval(function(){
@@ -135,7 +136,8 @@ function AStarWithAnimation(originMap,start,end) {
             let cur = curCoordinate.pop();
             passedPath.push(cur);
             map[cur[0]][cur[1]] = PASSED; 
-            $('.mazeArea .innerMaze').children().eq(cur[0]).children().eq(cur[1]).addClass('AStarCover');
+            // $('.mazeArea .innerMaze').children().eq(cur[0]).children().eq(cur[1]).addClass('AStarCover');
+            document.querySelector('.mazeArea .innerMaze').children[cur[0]].children[cur[1]].className = 'AStarCover';
             //if reach end
             if (cur[0] == EndY && cur[1] == EndX){
                 clearInterval(window.AstarAnimation);
@@ -164,6 +166,7 @@ function AStarWithAnimation(originMap,start,end) {
                     }else {
 
                         clearInterval(window.drawCorrectPath);
+                        window.AstarAnimation = null;
                     }
                 },0.001);
                 
@@ -182,49 +185,13 @@ function AStarWithAnimation(originMap,start,end) {
             }
         }else {
             clearInterval(window.AstarAnimation);
-            curSelected && curSelected.removeClass('selected')
-            curSelected = null;
+            window.AstarAnimation = null;
+            canMove  = true;
+            if (curSelected && curSelected.index() == $('.nav ul #pathfinding').index()){
+                curSelected.removeClass('selected')
+                curSelected = null;
+                
+            }
         }
     }, 0.001);
-    
-    // while (curCoordinate.getLength()){
-    //     let cur = curCoordinate.pop();
-    //     passedPath.push(cur);
-    //     map[cur[0]][cur[1]] = PASSED; 
-    //     $('.mazeArea .innerMaze').children().eq(cur[0]).children().eq(cur[1]).addClass('AStarCover');
-    //     //if reach end
-    //     if (cur[0] == EndY && cur[1] == EndX){
-    //         //add path in to list
-    //         let res = [];
-    //         res.push([EndY, EndX]);
-    //         let parent = cur[2];
-    //         while (parent != -1){
-    //             cur = passedPath[parent];
-    //             res.push([cur[0], cur[1]]);
-    //             parent = cur[2];
-    //         }//reverse list
-    //         let lo = 0;
-    //         let hi = res.length - 1;
-    //         while (lo < hi){
-    //             let temp = res[lo];
-    //             res[lo++] = res[hi];
-    //             res[hi--] = temp;
-    //         }
-    //         for (let i = 0; i < res.length; i++){
-    //             forAstar(res[i]);
-    //         }
-            
-    //     }for (let i = 0; i < dirs.length; i++) {
-    //         let tempY = cur[0] + dirs[i][0];
-    //         let tempX = cur[1] + dirs[i][1];
-    //         //if coordinate no allow, continue
-    //         if (tempY < FIRSTROW || tempY > LASTROW || tempX < FIRSTCOLS || tempX > LASTCOLS || map[tempY][tempX] != EMPTY){
-    //             continue;
-    //         }
-                
-    //         map[tempY][tempX] = CURRENTPATH;
-    //         $('.mazeArea .innerMaze').children().eq(tempY).children().eq(tempX).addClass('current');
-    //         curCoordinate.insert([tempY, tempX, passedPath.length -1, startPrice(passedPath) + endPrice(tempY, tempX, EndY, EndX)]);
-    //     }
-    // }
 }

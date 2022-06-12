@@ -113,12 +113,15 @@ $(
             'click', function(){
                 $(this).parent().hide();
                 $('#covering').hide();
-                curSelected && curSelected.removeClass('selected')
-                curSelected = null;
+                if (curSelected && curSelected.index() == $('.nav ul #generate').index()){
+                    curSelected.removeClass('selected')
+                    curSelected = null;
+                }
             }
         )
 
         $('#createMaze .submitArea .submit').on('click', function(){
+            MazeExist = false;
             let rowtext = $(this).parent().siblings('.getRow').find('.number #rowNumber');
             let coltext = $(this).parent().siblings('.getCol').find('.number #colNumber');
             if (rowtext.attr('accept') == 'true' && coltext.attr('accept') == 'true'){
@@ -270,8 +273,10 @@ $(
                         'font-size' : cellY + 'px'
                     });
                     cellLen = cellY;
-                    curSelected && curSelected.removeClass('selected')
-                    curSelected = null;
+                    if (curSelected && curSelected.index() == $('.nav ul #generate').index()){
+                        curSelected.removeClass('selected')
+                        curSelected = null;
+                    }
                 }
 
                 CurScreenLen = $(window).width();

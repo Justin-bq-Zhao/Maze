@@ -19,20 +19,20 @@
     background-color: white;
 }
 
-.mazeArea .passed {
-    background-color: cornflowerblue;
-}
-
 .mazeArea .current {
     background-color: rgb(3, 255, 171);
+}
+
+.mazeArea .AStarCover {
+    background-color: rgb(252, 162, 120);
 }
 
 .mazeArea .correct {
     background-color: rgb(231, 233, 104);
 }
 
-.mazeArea .AStarCover {
-    background-color: rgb(252, 162, 120);
+.mazeArea .passed {
+    background-color: cornflowerblue;
 }
 
 .mazeArea ul .curPos::after {

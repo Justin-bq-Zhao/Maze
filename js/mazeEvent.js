@@ -21,25 +21,12 @@ $(
                     CurScreenLen = $(window).width();
                     $('.nav .middle').click();
                     $('.nav .middle').click();
-                    // window.scroll(clickX,clickY);
-                    // setTimeout(function(){
-                    //     // window.scroll(clickX,clickY);
-                    // }, 100);
-                    // resizeMaze($(this), newX, newY);
                 }else if (curSelected.index() == $('.nav ul #zoomOut').index()){
                     let clickY = e.pageY / 2 + $(this).offset().top / 2 - e.clientY;
                     let clickX =  e.pageX / 2 + $(this).offset().left / 2  - e.clientX;
                     let str = $(this).css('transform');
                     str = str.substring(7,str.length - 1);
                     let arr = str.split(',');
-                    // $(this).css({
-                    //     'transform-origin':( centerX + 'px ' + centerY + 'px'),
-                    //     'transform' : 'scale(' + (arr[0] * 2) + ', ' + (arr[3] * 2) + ')',
-                    // });
-                    // let newX = $(this).width() * 2;
-                    // let newY = $(this).height() * 2;
-                    // $(this).width(newX);
-                    // $(this).height(newY);
             
                     $(this).css({
                         // 'transform-origin': (clickX / arr[0]) + 'px ' + (clickY / arr[3]) + 'px'

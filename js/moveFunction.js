@@ -30,8 +30,7 @@ function nextPos(str){
 
 function changeCurPos(newPos){
     curPos.removeClass('curPos');
-    newPos.addClass('passed');
-    newPos.addClass('curPos');
+    newPos[0].className = "passed curPos";
     newPos.css({
         'font-size' : cellLen + 'px'
     });
@@ -47,11 +46,9 @@ function SkipPos(newPos){
 }
 
 function forAstar(location){
-    let newPos = $('.mazeArea .innerMaze').children().eq(location[0]).children().eq(location[1]);
     curPos.removeClass('curPos');
-    curPos.removeClass('AStarCover');
-    newPos.addClass('correct');
-    newPos.addClass('curPos');
+    let newPos = $('.mazeArea .innerMaze').children().eq(location[0]).children().eq(location[1]);
+    newPos[0].className = "correct curPos";
     newPos.css({
         'font-size' : cellLen + 'px'
     });
