@@ -48,6 +48,7 @@ $(function(){
             $('#createMaze').hide();
             canMove = false;
         }else{
+            console.log($('#createMaze').width());
             $('#covering').hide();
             $('.AStarPathFind').hide();
             $('#createMaze').hide();

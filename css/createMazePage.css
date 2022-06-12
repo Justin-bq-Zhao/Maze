@@ -1,5 +1,5 @@
 #createMaze {
-    position: absolute;
+    position: fixed;
     width: 600px;
     height: 400px;
     top: 156px;
@@ -11,7 +11,7 @@
 }
 
 #covering {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

@@ -273,6 +273,11 @@ $(
                     curSelected && curSelected.removeClass('selected')
                     curSelected = null;
                 }
+
+                CurScreenLen = $(window).width();
+                $('.nav .middle').click();
+                $('.nav .middle').click();
+                
             }else{
                 $('#createMaze .submitArea .submitRes').text(' Illegal Parameters')
             }

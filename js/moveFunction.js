@@ -52,5 +52,8 @@ function forAstar(location){
     curPos.removeClass('AStarCover');
     newPos.addClass('correct');
     newPos.addClass('curPos');
+    newPos.css({
+        'font-size' : cellLen + 'px'
+    });
     curPos = newPos;
 }
