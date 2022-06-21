@@ -68,11 +68,11 @@ input[type="text"], textarea {
 
 @font-face {
     font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?f5skzf');
-    src:  url('../fonts/icomoon.eot?f5skzf#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?f5skzf') format('truetype'),
-      url('../fonts/icomoon.woff?f5skzf') format('woff'),
-      url('../fonts/icomoon.svg?f5skzf#icomoon') format('svg');
+    src:  url('./../fonts/icomoon.eot?f5skzf');
+    src:  url('./../fonts/icomoon.eot?f5skzf#iefix') format('embedded-opentype'),
+      url('./../fonts/icomoon.ttf?f5skzf') format('truetype'),
+      url('./../fonts/icomoon.woff?f5skzf') format('woff'),
+      url('./../fonts/icomoon.svg?f5skzf#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
