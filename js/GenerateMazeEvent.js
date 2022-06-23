@@ -135,8 +135,8 @@ $(
                 let mazeWidth = maze.width();
                 let mazHeight = maze.height();
                 let innerbox = $('.mazeArea .innerMaze');
-                let cellY = mazHeight / row;
-                let cellX = mazeWidth / col;
+                let cellY = Math.floor(((mazHeight / row) * 100)) /100;
+                let cellX = Math.floor(((mazeWidth / col) * 100)) /100;
                 if (cellY > cellX){
                     cellY = cellX;
                 }else{
