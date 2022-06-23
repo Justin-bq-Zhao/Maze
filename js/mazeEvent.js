@@ -49,7 +49,7 @@ $(
         });
         
         $('.mazeArea').on('mousedown', function(e){
-            if (MazeExist && e.target != this && curSelected){
+            if (MazeExist && e.target != this && curSelected && curSelected.index() == $('.nav ul #move').index()){
                 let x = e.pageX - $(this).offset().left;
                 let y = e.pageY - $(this).offset().top;
                 $('body').on('mousemove', function(e){
@@ -70,16 +70,16 @@ $(
         });
 
 
-        $('.innerArea').on({
+        $('.innerMaze').on({
             mouseenter : function(){
-                if (MazeExist && e.target != this && curSelected){
-                    $('innerArea').css({
+                if (MazeExist && curSelected && curSelected.index() == $('.nav ul #move').index()){
+                    $('.innerMaze').css({
                         cursor : 'grab',
                     });
                 };
             }, 
             mouseleave : function(){
-                $('innerArea').css({
+                $('.innerMaze').css({
                     cursor : 'default',
                 });
             }
